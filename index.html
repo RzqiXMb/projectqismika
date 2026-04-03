@@ -130,11 +130,17 @@ button:hover {
 </head>
 
 <body>
-
-<!-- MUSIC -->
-<audio autoplay loop>
+<audio id="myAudio" loop>
   <source src="musik.mp3" type="audio/mpeg">
 </audio>
+
+<script>
+  // Musik akan mulai berputar saat user menyentuh layar mana saja
+  window.addEventListener('click', function() {
+      var audio = document.getElementById("myAudio");
+      audio.play();
+  }, { once: true }); // 'once: true' artinya perintah ini cuma jalan sekali saat klik pertama
+</script>
 
 <!-- STARS -->
 <div class="stars" id="stars"></div>
